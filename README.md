@@ -1,167 +1,391 @@
-# ⚡ ECM Guardian – Smart Energy & Machine Monitoring System
+# ECM Guardian
 
-A smart energy and machine monitoring system designed to analyze ECM machine parameters, identify abnormal operating conditions, generate alerts, and provide performance reports.
+## Smart Energy Machine Monitoring System for SMEs
 
-## 📌 Project Overview
+ECM Guardian is a smart machine monitoring system designed for Small and Medium-sized Enterprises (SMEs).
 
-ECM Guardian monitors machine-related parameters such as voltage, current, power, and temperature. The system analyzes the collected dataset values, compares them with predefined thresholds, identifies safe, warning, and critical conditions, and provides visual monitoring through a dashboard.
+The system monitors machine parameters, identifies machine conditions, displays monitoring status, records alerts, and sends email notifications when critical conditions are detected.
 
-The system also maintains alert history and supports email notifications, weekly performance reports, and PDF report generation.
+---
 
-## 🎯 Objectives
+## 🚀 Live Application
 
-- Monitor important machine and energy parameters.
-- Detect abnormal operating conditions using threshold-based analysis.
-- Display machine status through a dashboard.
-- Generate alerts for warning and critical conditions.
-- Send email notifications when abnormal conditions occur.
-- Maintain alert history for analysis.
-- Generate weekly performance reports.
-- Export monitoring results as PDF reports.
+**Frontend:**  
+https://ecm-guardian-main.vercel.app
 
-## 🔄 System Workflow
+**Email Alert Backend:**  
+https://ecm-mail-backend.vercel.app
 
-Dataset Input  
-↓  
-Data Preprocessing  
-↓  
-Parameter Extraction  
-↓  
-Threshold Comparison  
-↓  
-Safe / Warning / Critical Status  
-↓  
-Dashboard Display  
-↓  
-Alert Generation  
-↓  
-Email Notification  
-↓  
-Weekly Report Generation  
-↓  
-PDF Export
+**GitHub Repository:**  
+https://github.com/manimaran0024/smart-energy-machine-monitoring
 
-## ✨ Key Features
+---
 
-- 📊 Energy and machine parameter monitoring
-- 🟢 Safe status detection
-- 🟡 Warning status detection
-- 🔴 Critical status detection
-- 🚨 Alert history
-- 📧 Email alerts
-- 📈 Weekly performance reports
-- 📄 PDF report generation
-- 🖥️ Web-based dashboard
+## ✨ Features
 
-## 🛠️ Technology Stack
+- Real-time machine monitoring
+- Machine parameter monitoring
+- Safe status detection
+- Warning status detection
+- Critical status detection
+- Critical machine alerts
+- Email notifications
+- Alert history
+- Machine performance monitoring
+- Weekly performance reports
+- PDF report generation
+- Responsive dashboard
+- Modern web interface
+
+---
+
+## 🟢 Machine Status
+
+### Safe
+
+The machine parameters are within the configured safe limits.
+
+### Warning
+
+The machine parameters are approaching configured limits and require attention.
+
+### Critical
+
+The machine parameters exceed the configured critical limits.
+
+When a critical condition is detected, the system can generate an alert and send an email notification.
+
+---
+
+## 📧 Email Alert System
+
+ECM Guardian uses a separate Node.js and Express backend for sending alert emails.
+
+### Backend Location
+
+```text
+ecm-mail-backend/
+```
+
+### API Endpoint
+
+```text
+POST /send-alert
+```
+
+### Example Request
+
+```json
+{
+  "to": "recipient@example.com",
+  "subject": "ECM CRITICAL ALERT",
+  "text": "Critical machine condition detected."
+}
+```
+
+The frontend connects to the email backend using the environment variable:
+
+```text
+VITE_ALERT_BACKEND_URL
+```
+
+Production backend:
+
+```text
+https://ecm-mail-backend.vercel.app
+```
+
+Local backend:
+
+```text
+http://localhost:8000
+```
+
+---
+
+## 🏗️ Project Structure
+
+```text
+smart-energy-machine-monitoring/
+│
+├── src/
+│   ├── hooks/
+│   │   └── use-ecm-stream.ts
+│   ├── components/
+│   ├── pages/
+│   └── ...
+│
+├── ecm-mail-backend/
+│   ├── server.js
+│   ├── package.json
+│   └── package-lock.json
+│
+├── screenshots/
+│
+├── public/
+│
+├── package.json
+├── package-lock.json
+├── README.md
+└── .gitignore
+```
+
+---
+
+## 🛠️ Technologies Used
 
 ### Frontend
+
 - React
 - TypeScript
 - Vite
 - Tailwind CSS
+- shadcn/ui
 
 ### Backend
+
 - Node.js
 - Express.js
 - Nodemailer
+- CORS
 
-### Data
-- ECM machine dataset
-- CSV / historical machine values
-- Threshold-based analysis
+### Deployment
 
-## 📸 Screenshots
+- GitHub
+- Vercel
 
-### Safe Status Dashboard
+---
 
-![Safe Status Dashboard](Safe%20Status%20Dashboard.png)
+## 💻 Run the Frontend Locally
 
-### Warning Status Dashboard
+Clone the repository:
 
-![Warning Status Dashboard](Warning%20Status%20Dashboard.png)
+```bash
+git clone https://github.com/manimaran0024/smart-energy-machine-monitoring.git
+```
 
-### Critical Status Dashboard
+Enter the project directory:
 
-![Critical Status Dashboard](Critical%20Status%20Dashboard.png)
+```bash
+cd smart-energy-machine-monitoring
+```
 
-### Alert History
+Install dependencies:
 
-![Alert History](Alert%20History.png)
+```bash
+npm install
+```
 
-### Weekly Performance Report
+Start the development server:
 
-![Weekly Performance Report](Weekly%20Performance%20Report.png)
+```bash
+npm run dev
+```
 
-### PDF Report
+The application will normally run at:
 
-![PDF Report](PDF%20Report.png)
+```text
+http://localhost:5173
+```
 
-## 🚀 Future Enhancements
+---
 
-- Live machine data integration
-- IoT sensor connectivity
-- Cloud deployment
-- Mobile application support
-- AI-based anomaly detection
-- Automated predictive maintenance
+## 📧 Run the Email Backend Locally
 
-## 👨‍💻 Project
+Open a second terminal.
 
-**ECM Guardian – Smart Energy & Machine Monitoring System**
+Go to the backend:
 
-## How to Run
+```bash
+cd ecm-mail-backend
+```
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Start the backend:
+
+```bash
+npm start
+```
+
+The backend runs on:
+
+```text
+http://localhost:8000
+```
+
+---
+
+## 🔐 Environment Variables
+
+The frontend uses:
+
+```text
+VITE_ALERT_BACKEND_URL
+```
+
+### Local Development
+
+```text
+VITE_ALERT_BACKEND_URL=http://localhost:8000
+```
+
+### Production
+
+```text
+VITE_ALERT_BACKEND_URL=https://ecm-mail-backend.vercel.app
+```
+
+### Security
+
+Never commit passwords, Gmail App Passwords, API keys, or other sensitive credentials to GitHub.
+
+Sensitive credentials should be stored using environment variables and configured through Vercel Environment Variables.
+
+---
+
+## 🔄 System Workflow
+
+```text
+Machine Data
+     │
+     ▼
+ECM Monitoring
+     │
+     ▼
+Parameter Evaluation
+     │
+     ├──────────────┐
+     │              │
+     ▼              ▼
+   Safe          Warning
+                    │
+                    ▼
+                 Critical
+                    │
+                    ▼
+              Alert Generated
+                    │
+                    ▼
+              Email Backend
+                    │
+                    ▼
+             Email Notification
+```
+
+---
+
+## 📊 Reports and History
+
+The system provides:
+
+- Alert history
+- Machine status information
+- Weekly performance reports
+- PDF report generation
+- Machine monitoring information
+
+---
+
+## ☁️ Deployment
+
+The application is deployed using Vercel.
 
 ### Frontend
 
-Open terminal inside `ecm-guardian-main`:
-
-npm install
-
-npm run dev
+https://ecm-guardian-main.vercel.app
 
 ### Email Backend
 
-Open another terminal inside `ecm-mail-backend`:
+https://ecm-mail-backend.vercel.app
 
-npm install
+### Deploy Frontend
 
-node server.js
+```bash
+vercel --prod
+```
 
-The email backend runs on port 8000.
+### Deploy Backend
 
-### Environment Variables
+Go to the backend directory:
 
-Create a `.env` file inside `ecm-mail-backend`:
+```bash
+cd ecm-mail-backend
+```
 
-EMAIL_USER=your-email@gmail.com
-EMAIL_PASS=your-gmail-app-password
-PORT=8000
+Then:
 
-Do not upload the `.env` file to GitHub.
+```bash
+vercel --prod
+```
 
-## 🏗️ System Architecture
+---
 
-```text
-ECM Machine Dataset
-        ↓
-Data Preprocessing
-        ↓
-Parameter Analysis
-        ↓
-Threshold Comparison
-        ↓
-┌───────────────┐
-│ Safe / Warning│
-│ / Critical    │
-└───────┬───────┘
-        ↓
-Dashboard Monitoring
-        ↓
-Alert History
-        ↓
-Email Notification
-        ↓
-Weekly Performance Report
-        ↓
-PDF Report Generation
+## 🔄 Git Workflow
+
+After making changes:
+
+```bash
+git status
+```
+
+Add changes:
+
+```bash
+git add .
+```
+
+Commit changes:
+
+```bash
+git commit -m "Update project"
+```
+
+Push to GitHub:
+
+```bash
+git push origin main
+```
+
+If GitHub and Vercel are connected, new commits can automatically trigger a Vercel deployment.
+
+---
+
+## 📸 Screenshots
+
+The project includes screenshots demonstrating:
+
+- Safe Status Dashboard
+- Warning Status Dashboard
+- Critical Status Dashboard
+- Alert History
+- Weekly Performance Report
+- PDF Report
+
+Screenshots are available in the `screenshots/` directory.
+
+---
+
+## 📄 License
+
+This project is licensed under the terms specified in the `LICENSE` file.
+
+---
+
+## 👨‍💻 Project
+
+**ECM Guardian**
+
+**Smart Energy Machine Monitoring System for SMEs**
+
+GitHub Repository:
+
+https://github.com/manimaran0024/smart-energy-machine-monitoring
+
+Live Application:
+
+https://ecm-guardian-main.vercel.app
