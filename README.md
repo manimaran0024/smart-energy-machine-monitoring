@@ -139,3 +139,29 @@ EMAIL_PASS=your-gmail-app-password
 PORT=8000
 
 Do not upload the `.env` file to GitHub.
+
+## 🏗️ System Architecture
+
+```text
+ECM Machine Dataset
+        ↓
+Data Preprocessing
+        ↓
+Parameter Analysis
+        ↓
+Threshold Comparison
+        ↓
+┌───────────────┐
+│ Safe / Warning│
+│ / Critical    │
+└───────┬───────┘
+        ↓
+Dashboard Monitoring
+        ↓
+Alert History
+        ↓
+Email Notification
+        ↓
+Weekly Performance Report
+        ↓
+PDF Report Generation
