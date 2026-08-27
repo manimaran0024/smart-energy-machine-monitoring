@@ -1,56 +1,23 @@
-# ECM Guardian – Smart Energy & Machine Monitoring System
+# ⚡ ECM Guardian – Smart Energy & Machine Monitoring System
+
+A smart energy and machine monitoring system designed to analyze ECM machine parameters, identify abnormal operating conditions, generate alerts, and provide performance reports.
 
 ## 📌 Project Overview
 
-ECM Guardian is a smart energy and machine monitoring system designed to analyze ECM machine data and provide centralized monitoring, threshold-based alerts, email notifications, analytics, weekly reports, and PDF export.
+ECM Guardian monitors machine-related parameters such as voltage, current, power, and temperature. The system analyzes the collected dataset values, compares them with predefined thresholds, identifies safe, warning, and critical conditions, and provides visual monitoring through a dashboard.
 
-The system uses machine monitoring dataset values to analyze parameters such as voltage, current, power, temperature, and runtime. It helps identify abnormal operating conditions and provides useful information for energy management and preventive maintenance.
+The system also maintains alert history and supports email notifications, weekly performance reports, and PDF report generation.
 
 ## 🎯 Objectives
 
-- Monitor ECM machine and energy consumption parameters
-- Analyze machine performance using dataset values
-- Detect abnormal conditions using threshold-based monitoring
-- Generate automated alerts and email notifications
-- Provide graphical analytics through a web dashboard
-- Generate weekly performance reports
-- Export reports in PDF format
-
-## ✨ Key Features
-
-- Energy consumption monitoring
-- Machine parameter analysis
-- Threshold-based alert detection
-- Warning and critical alerts
-- Email notifications
-- Interactive dashboard
-- Graphical analytics
-- Weekly performance reports
-- PDF report generation
-- Firebase-based data management
-
-## 🧩 Main Modules
-
-1. Monitoring & Data Management
-2. Threshold Analysis & Alert Notification
-3. Dashboard Visualization & Analytics
-4. Report Generation & PDF Export
-
-## 🛠️ Technology Stack
-
-- React.js
-- TypeScript
-- Firebase
-- Node.js
-- Express.js
-- Recharts
-- Nodemailer
-- jsPDF
-- Tailwind CSS
-
-## 📊 Dataset
-
-The system uses ECM machine monitoring dataset values for testing and analysis. The dataset represents machine and energy parameters used by the application for monitoring, threshold analysis, visualization, and reporting.
+- Monitor important machine and energy parameters.
+- Detect abnormal operating conditions using threshold-based analysis.
+- Display machine status through a dashboard.
+- Generate alerts for warning and critical conditions.
+- Send email notifications when abnormal conditions occur.
+- Maintain alert history for analysis.
+- Generate weekly performance reports.
+- Export monitoring results as PDF reports.
 
 ## 🔄 System Workflow
 
@@ -58,13 +25,15 @@ Dataset Input
 ↓  
 Data Preprocessing  
 ↓  
-Parameter Analysis  
+Parameter Extraction  
 ↓  
-Threshold Checking  
+Threshold Comparison  
 ↓  
-Normal / Abnormal Condition Detection  
+Safe / Warning / Critical Status  
 ↓  
-Dashboard & Alert Generation  
+Dashboard Display  
+↓  
+Alert Generation  
 ↓  
 Email Notification  
 ↓  
@@ -72,42 +41,71 @@ Weekly Report Generation
 ↓  
 PDF Export
 
-## 🚀 Project Status
+## ✨ Key Features
 
-**Completed**
+- 📊 Energy and machine parameter monitoring
+- 🟢 Safe status detection
+- 🟡 Warning status detection
+- 🔴 Critical status detection
+- 🚨 Alert history
+- 📧 Email alerts
+- 📈 Weekly performance reports
+- 📄 PDF report generation
+- 🖥️ Web-based dashboard
 
-The project was developed and completed as an academic project. The source code is maintained on GitHub for version control, documentation, and portfolio purposes.
+## 🛠️ Technology Stack
 
-## 🔮 Future Enhancements
+### Frontend
+- React
+- TypeScript
+- Vite
+- Tailwind CSS
 
-- Live IoT sensor integration
-- Real-time machine data acquisition
-- Mobile application
-- AI-based predictive maintenance
-- Advanced energy consumption forecasting
-- Large-scale cloud deployment
+### Backend
+- Node.js
+- Express.js
+- Nodemailer
 
-## 👨‍💻 Author
+### Data
+- ECM machine dataset
+- CSV / historical machine values
+- Threshold-based analysis
 
-**Manimaran**
-
-GitHub: https://github.com/manimaran0024
 ## 📸 Screenshots
 
 ### Safe Status Dashboard
+
 ![Safe Status Dashboard](Safe%20Status%20Dashboard.png)
 
 ### Warning Status Dashboard
+
 ![Warning Status Dashboard](Warning%20Status%20Dashboard.png)
 
 ### Critical Status Dashboard
+
 ![Critical Status Dashboard](Critical%20Status%20Dashboard.png)
 
 ### Alert History
+
 ![Alert History](Alert%20History.png)
 
 ### Weekly Performance Report
+
 ![Weekly Performance Report](Weekly%20Performance%20Report.png)
 
 ### PDF Report
+
 ![PDF Report](PDF%20Report.png)
+
+## 🚀 Future Enhancements
+
+- Live machine data integration
+- IoT sensor connectivity
+- Cloud deployment
+- Mobile application support
+- AI-based anomaly detection
+- Automated predictive maintenance
+
+## 👨‍💻 Project
+
+**ECM Guardian – Smart Energy & Machine Monitoring System**
