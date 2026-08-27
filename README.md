@@ -109,3 +109,33 @@ PDF Export
 ## 👨‍💻 Project
 
 **ECM Guardian – Smart Energy & Machine Monitoring System**
+
+## How to Run
+
+### Frontend
+
+Open terminal inside `ecm-guardian-main`:
+
+npm install
+
+npm run dev
+
+### Email Backend
+
+Open another terminal inside `ecm-mail-backend`:
+
+npm install
+
+node server.js
+
+The email backend runs on port 8000.
+
+### Environment Variables
+
+Create a `.env` file inside `ecm-mail-backend`:
+
+EMAIL_USER=your-email@gmail.com
+EMAIL_PASS=your-gmail-app-password
+PORT=8000
+
+Do not upload the `.env` file to GitHub.
