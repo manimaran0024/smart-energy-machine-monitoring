@@ -92,3 +92,22 @@ The project was developed and completed as an academic project. The source code 
 **Manimaran**
 
 GitHub: https://github.com/manimaran0024
+## 📸 Screenshots
+
+### Safe Status Dashboard
+![Safe Status Dashboard](Safe%20Status%20Dashboard.png)
+
+### Warning Status Dashboard
+![Warning Status Dashboard](Warning%20Status%20Dashboard.png)
+
+### Critical Status Dashboard
+![Critical Status Dashboard](Critical%20Status%20Dashboard.png)
+
+### Alert History
+![Alert History](Alert%20History.png)
+
+### Weekly Performance Report
+![Weekly Performance Report](Weekly%20Performance%20Report.png)
+
+### PDF Report
+![PDF Report](PDF%20Report.png)
